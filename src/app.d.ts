@@ -4,6 +4,9 @@
 declare namespace App {
 	// interface Error {}
 	// interface Locals {}
-	// interface PageData {}
+	interface PageData {
+		questions: { name: string; title: string; value: string }[];
+		cities: { name: string }[];
+	}
 	// interface Platform {}
 }
