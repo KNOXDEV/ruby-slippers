@@ -2,6 +2,15 @@
 
 A magic tool that helps find your way home.
 
+Built with the following technologies:
+* [SvelteKit](https://kit.svelte.dev/) - frontend ui and meta framework
+* [TypeScript](https://www.typescriptlang.org/) - types to not go insane
+* [TailwindCSS](https://tailwindcss.com/) - css framework
+* [daisyUI](https://daisyui.com/) - ui and component framework
+* [supabase](https://supabase.com/) - database (postgres)
+* [Prisma](https://www.prisma.io/) - ORM for database
+* [Vercel](https://vercel.com/) - serverless deployment
+
 ## developing
 
 ```bash
