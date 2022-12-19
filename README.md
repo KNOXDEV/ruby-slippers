@@ -13,19 +13,29 @@ Built with the following technologies:
 
 ## developing
 
+First make sure you get the latest version of the [`ruby-slippers-db`](https://github.com/KNOXDEV/ruby-slippers-db)
+dependency. This schema is in a submodule because it's included by multiple projects.
+
 ```bash
+git submodule update --init --recursive
 pnpm install 
+pnpx prisma generate # generate the primsa client libraries
+```
+
+Next, you'll need to set the `DATABASE_URL` environment variable, most likely in your `.env` file
+at the root of the project.
+
+After that, you should be able to run the app like 
+
+```bash
 pnpm run dev -- --open
 ```
 
-## building
+## building and deploying
 
-To create a production version of your app:
+This app is continuously deployed via Vercel and uses Supabase as its backend Postgres DB.
+A few notes:
 
-```bash
-pnpm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-## deploying
+1. When in development and running `prisma migrate`, you should use the regular Supabase DB connection URL.
+When in production on Vercel, you should provide the
+[pooled URL](https://supabase.com/docs/guides/integrations/prisma#connection-pooling-with-supabase).
